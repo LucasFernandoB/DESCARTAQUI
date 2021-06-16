@@ -1,0 +1,89 @@
+CREATE DATABASE projetoFinalESOF;
+Use projetoFinalESOF;
+
+CREATE TABLE dadosContato(
+id int auto_increment not null,
+nome VARCHAR(50),
+email VARCHAR(50),
+telefone VARCHAR(11),
+mensagem VARCHAR(200),
+PRIMARY KEY(id));
+
+select * from dadosContato;
+
+CREATE TABLE doador(
+id int primary key auto_increment,
+nome VARCHAR(50),
+telefone VARCHAR(11),
+email VARCHAR(50) unique not null,
+senha varchar(50));
+
+select * from doador;
+
+CREATE TABLE empresa(
+id int primary key auto_increment,
+nome VARCHAR(50),
+cnpj VARCHAR(11),
+telefone VARCHAR(11),
+email VARCHAR(50) unique,
+senha varchar(50),
+setor varchar(50));
+
+select * from empresa;
+
+CREATE TABLE lixo(
+id int primary key auto_increment,
+tipo varchar(100),
+caminho varchar(100),
+descricao VARCHAR(100),
+emailDoador VARCHAR(50) references doador(email),
+reservado int);
+
+select * from Lixo;
+
+create table endereco(
+id int primary key auto_increment,
+rua varchar(100),
+numero int,
+bairro varchar(100),
+cidade varchar(50),
+cep varchar(20),
+estado varchar(20),
+emailDoador varchar(50) references doador(email),
+emailEmp varchar(50) references empresa(email)
+);
+
+select* from endereco;
+
+create table adm(
+login varchar(20) primary key,
+senha varchar(20)
+);
+
+CREATE TABLE Contato(
+id int auto_increment not null,
+nome VARCHAR(50),
+email VARCHAR(50),
+telefone VARCHAR(11),
+mensagem VARCHAR(200),
+PRIMARY KEY(id));
+
+select*from contato;
+
+create or replace view listaLixo as 
+select l.caminho as caminho, l.tipo as Tipo, l.descricao as descricao, 
+doador.nome as Doador, doador.telefone as Telefone,
+endereco.rua as rua, endereco.numero as numero, endereco.bairro as bairro,endereco.cidade as cidade, endereco.estado as estado
+from lixo as l, doador, endereco where doador.email= l.emailDoador and doador.email= endereco.emailDoador;
+
+
+create or replace view listaEmpresa as
+select e.nome as nome, e.cnpj as cnpj,e.setor as setor, e.email as email, e.telefone as telefone,
+m.rua as rua, m.numero as numero, m.bairro as bairro, m.cidade as cidade, m.estado as estado
+from empresa as e, endereco as m 
+where e.email = m.emailEmp;
+
+select * from listaempresa; 
+
+
+select * from listaLixo;
