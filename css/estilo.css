@@ -1,0 +1,116 @@
+td{
+ width: 70px;
+}
+th{
+ width: 70px;
+}
+#imgPrev{
+max-width:400px;max-height:350px;width: auto;height: auto; background: black;
+}
+tr{
+ width: 70px;
+}
+table{
+	border="1";
+}
+#imgLixo{
+max-width:400px;max-height:350px;width: auto;height: auto;
+}
+#cabecalho{
+	background:#00FF7F; 
+}
+/*estlizacao do texto da imagem*/
+.textoImagem{
+	color: green;
+	font-size: 16px;
+}
+/*classe com estilizacao do tamanho da linha*/
+.linha{
+	width: 960px;
+	margin:0 auto;
+	overflow: auto;
+	padding: 5px 0;
+}
+
+/*classe com estilizacao do tamanho da coluna*/
+.coluna{
+	padding: 0 10px;
+	float: left;
+}
+/*tamanho das colunas*/
+.col1{
+	width: 60px;
+}
+.col2{
+	width: 140px;
+}
+.col3{
+	width: 220px;
+}
+.col4{
+	width: 300px;
+}
+.col5{
+	width: 380px;
+}
+.col6{
+	width: 460px;
+}
+.col7{
+	width: 540px;
+}
+.col8{
+	width: 620px;
+}
+.col9{
+	width: 700px;
+}
+.col10{
+	width: 780px;
+}
+.col11{
+	width: 860px;
+}
+.col12{
+	width: 940px;
+}
+/*deixando as imagens responsiveis*/
+img {
+  width: 100%;
+  height: 30%;
+
+}
+/*classe com estilizacao do subtitulo do site*/
+.subtitulo{
+	font-size: 20px;
+	font-weight: bold;
+
+}
+/*estlizando o roda pe da pagina*/
+.conteudo-extra{
+	background: #1f3c58;
+}
+.footer{
+	text-align: center;
+	background: #1f3c58;
+	color: #ebebeb;
+	padding: 20px 0;
+}
+
+#alinhamentoCentro{
+	text-align: center;
+}
+#mensagemDiv{
+	color: red; 
+	font-size: 15px;
+
+}
+
+.estiloTextoIndex{
+	width: 93%;
+  text-align: auto;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+}
+
